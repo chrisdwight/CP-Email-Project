@@ -779,3 +779,12 @@ body {
     }
 }
 
+/* Ensure hamburger is hidden on larger viewports (desktop). This rule
+   overrides any other display rules that might accidentally show the
+   hamburger on GitHub Pages due to caching or differing cascade order. */
+@media (min-width: 993px) {
+    .nav-toggle {
+        display: none !important;
+    }
+}
+
