@@ -360,7 +360,7 @@ body {
     ------------------------------ */
 
 @media (max-width: 992px) {
-    .nav-toggle { display: inline-flex; align-items: center; justify-content: center; color: #333; }
+    .nav-toggle { display: inline-block; color: #333; }
     /* animated collapse for mobile nav: keep visual flow but hide using max-height/opacity */
     .navbar ul {
         display: flex;
@@ -405,7 +405,7 @@ body {
 .nav-toggle-checkbox:checked + .nav-toggle .hamburger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 /* Larger hit target for accessibility: apply to the label container but avoid extra white box */
-.nav-toggle { min-width: 52px; min-height: 52px; }
+.nav-toggle { min-width: 52px; min-height: 52px; display: inline-flex; align-items: center; justify-content: center; }
 
 @media (max-width: 768px) {
     .menu-item .add-to-cart {
@@ -777,50 +777,5 @@ body {
     .offer-item h3 {
         font-size: 1.2em; /* Smaller offer item heading */
     }
-}
-
-/* Ensure hamburger is hidden on larger viewports (desktop). This rule
-   overrides any other display rules that might accidentally show the
-   hamburger on GitHub Pages due to caching or differing cascade order. */
-@media (min-width: 993px) {
-    .nav-toggle {
-        display: none !important;
-    }
-}
-
-/* Desktop-only: make navbar clearer across the site (individual link backgrounds)
-   These rules are scoped to desktop viewports so mobile layout remains unchanged. */
-@media (min-width: 993px) {
-    .header { padding-top: 12px; padding-bottom: 12px; }
-
-    /* Give the navbar a subtle container so the items sit comfortably */
-    .navbar {
-        background: transparent; /* keep the header background as-is; links will have white boxes */
-        padding: 10px 16px; /* match homepage spacing */
-        border-radius: 12px;
-    }
-
-    /* Individual link boxes for better contrast and discoverability (homepage sizing applied site-wide) */
-    .navbar ul { gap: 18px; }
-    .navbar a {
-        display: inline-block;
-        background: #ffffff;
-        color: #1a1a1a;
-        padding: 10px 16px;
-        border-radius: 10px;
-        font-weight: 700;
-        font-size: 1.08rem; /* match homepage size */
-        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-        transition: background-color 220ms ease, transform 160ms ease, color 160ms ease;
-    }
-
-    .navbar a:hover {
-        background-color: #FF7043; /* theme hover */
-        color: #fff;
-        transform: translateY(-2px);
-    }
-
-    /* Homepage-specific container shadow (optional) */
-    .home .navbar { box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
 }
 
