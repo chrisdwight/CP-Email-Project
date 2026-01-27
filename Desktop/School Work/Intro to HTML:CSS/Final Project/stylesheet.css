@@ -796,11 +796,12 @@ body {
     /* Give the navbar a subtle container so the items sit comfortably */
     .navbar {
         background: transparent; /* keep the header background as-is; links will have white boxes */
-        padding: 6px 0;
+        padding: 10px 16px; /* match homepage spacing */
+        border-radius: 12px;
     }
 
-    /* Individual link boxes for better contrast and discoverability */
-    .navbar ul { gap: 14px; }
+    /* Individual link boxes for better contrast and discoverability (homepage sizing applied site-wide) */
+    .navbar ul { gap: 18px; }
     .navbar a {
         display: inline-block;
         background: #ffffff;
@@ -808,7 +809,7 @@ body {
         padding: 10px 16px;
         border-radius: 10px;
         font-weight: 700;
-        font-size: 1.06rem; /* slightly larger on desktop */
+        font-size: 1.08rem; /* match homepage size */
         box-shadow: 0 6px 18px rgba(0,0,0,0.08);
         transition: background-color 220ms ease, transform 160ms ease, color 160ms ease;
     }
@@ -819,13 +820,7 @@ body {
         transform: translateY(-2px);
     }
 
-    /* Keep previous homepage-focused enhancement but let site-wide rules apply first */
-    .home .navbar {
-        padding: 10px 16px;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    }
-    .home .navbar ul { gap: 18px; }
-    .home .navbar a { font-size: 1.08rem; }
+    /* Homepage-specific container shadow (optional) */
+    .home .navbar { box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
 }
 
