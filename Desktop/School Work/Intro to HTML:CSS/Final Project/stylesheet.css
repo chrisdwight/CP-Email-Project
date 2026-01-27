@@ -788,3 +788,30 @@ body {
     }
 }
 
+/* Desktop-only: make navbar clearer on the homepage only */
+@media (min-width: 993px) {
+    .home .header {
+        /* give the header more breathing room on desktop */
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+    .home .navbar {
+        background: rgba(255,255,255,0.94);
+        padding: 10px 16px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        transform: translateY(0);
+    }
+    .home .navbar ul { gap: 18px; }
+    .home .navbar a {
+        color: #1a1a1a;
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 10px 14px;
+    }
+    .home .navbar a:hover {
+        background-color: #FF7043; /* slightly lighter hover to match theme */
+        color: #fff;
+    }
+}
+
