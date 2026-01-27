@@ -28,7 +28,12 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr;
-    height: 100vh;
+    /* allow the page to grow taller than the viewport instead of forcing a fixed 100vh
+       which can cause large-screen layout shifts; also constrain overall width so the
+       layout on very large monitors stays similar to laptop sizes */
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* ------------------------------
@@ -97,7 +102,7 @@ body {
     overflow-y: auto;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin: 20px;
+    margin: 20px auto; /* center content within the constrained container width */
 }
 
 .hero {
