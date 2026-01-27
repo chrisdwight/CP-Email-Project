@@ -405,7 +405,7 @@ body {
 .nav-toggle-checkbox:checked + .nav-toggle .hamburger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 /* Larger hit target for accessibility: apply to the label container but avoid extra white box */
-.nav-toggle { min-width: 52px; min-height: 52px; display: inline-flex; align-items: center; justify-content: center; }
+.nav-toggle { min-width: 52px; min-height: 52px; align-items: center; justify-content: center; }
 
 @media (max-width: 768px) {
     .menu-item .add-to-cart {
