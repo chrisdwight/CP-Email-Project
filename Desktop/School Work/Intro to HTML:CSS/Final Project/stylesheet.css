@@ -788,30 +788,44 @@ body {
     }
 }
 
-/* Desktop-only: make navbar clearer on the homepage only */
+/* Desktop-only: make navbar clearer across the site (individual link backgrounds)
+   These rules are scoped to desktop viewports so mobile layout remains unchanged. */
 @media (min-width: 993px) {
-    .home .header {
-        /* give the header more breathing room on desktop */
-        padding-top: 14px;
-        padding-bottom: 14px;
+    .header { padding-top: 12px; padding-bottom: 12px; }
+
+    /* Give the navbar a subtle container so the items sit comfortably */
+    .navbar {
+        background: transparent; /* keep the header background as-is; links will have white boxes */
+        padding: 6px 0;
     }
+
+    /* Individual link boxes for better contrast and discoverability */
+    .navbar ul { gap: 14px; }
+    .navbar a {
+        display: inline-block;
+        background: #ffffff;
+        color: #1a1a1a;
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 1.06rem; /* slightly larger on desktop */
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: background-color 220ms ease, transform 160ms ease, color 160ms ease;
+    }
+
+    .navbar a:hover {
+        background-color: #FF7043; /* theme hover */
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+    /* Keep previous homepage-focused enhancement but let site-wide rules apply first */
     .home .navbar {
-        background: rgba(255,255,255,0.94);
         padding: 10px 16px;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-        transform: translateY(0);
     }
     .home .navbar ul { gap: 18px; }
-    .home .navbar a {
-        color: #1a1a1a;
-        font-weight: 700;
-        font-size: 1.05rem;
-        padding: 10px 14px;
-    }
-    .home .navbar a:hover {
-        background-color: #FF7043; /* slightly lighter hover to match theme */
-        color: #fff;
-    }
+    .home .navbar a { font-size: 1.08rem; }
 }
 
