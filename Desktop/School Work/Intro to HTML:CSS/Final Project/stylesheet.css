@@ -784,3 +784,28 @@ body {
     }
 }
 
+/* ------------------------------
+   Desktop clamp: keep laptop layout on very large screens
+   ------------------------------
+   This non-invasive block centers the page and constrains the
+   content width on ultra-wide monitors so the site continues to
+   look like the laptop screenshot without changing spacing.
+*/
+@media (min-width: 1400px) {
+    body { background-position: top center; }
+    .container {
+        width: 100%;
+        max-width: 1200px; /* ensures layout remains laptop-sized */
+        margin: 20px auto; /* keep centered */
+        padding-left: 12px; /* small breathing room */
+        padding-right: 12px;
+    }
+    .header, .content {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .content { padding-bottom: 80px; }
+    .hero { max-width: 1100px; margin: 0 auto 40px; }
+}
+
